@@ -1,0 +1,11 @@
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\bin\Debug\netcoreapp2.1\Coding Problems.deps.json
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\bin\Debug\netcoreapp2.1\Coding Problems.runtimeconfig.json
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\bin\Debug\netcoreapp2.1\Coding Problems.runtimeconfig.dev.json
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\bin\Debug\netcoreapp2.1\Coding Problems.dll
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\bin\Debug\netcoreapp2.1\Coding Problems.pdb
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\obj\Debug\netcoreapp2.1\Coding Problems.csprojAssemblyReference.cache
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\obj\Debug\netcoreapp2.1\Coding Problems.csproj.CoreCompileInputs.cache
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\obj\Debug\netcoreapp2.1\Coding Problems.AssemblyInfoInputs.cache
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\obj\Debug\netcoreapp2.1\Coding Problems.AssemblyInfo.cs
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\obj\Debug\netcoreapp2.1\Coding Problems.dll
+C:\Users\pezzinog\Documents\_SwLab\Coding Problems\obj\Debug\netcoreapp2.1\Coding Problems.pdb
