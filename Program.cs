@@ -22,7 +22,14 @@ namespace Coding_Problems
             Console.WriteLine();
 
             Console.WriteLine(SplitArrayEqualSum.Split(new int[] { -1, 6, 3, 1, -2, 3, 3 }, 7).ToString());
+            Console.WriteLine();
 
+            Console.WriteLine("------------------------------");
+            Console.WriteLine();
+
+            var weights = new int[] { 1, 2, 3, 8, 7, 4 };
+            var values = new int[] { 20, 5, 10, 40, 15, 25 };
+            Console.WriteLine(Knapsack.ComputeValue(values, weights, 6, 10));
         }
     }
 }
