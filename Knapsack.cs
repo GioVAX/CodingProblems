@@ -6,40 +6,36 @@ namespace Coding_Problems
 {
     public class Knapsack
     {
-        private class Sack
+        private class Item
         {
-            
-
             public int Value;
-            public int Weigth;
-
-            public Sack Add(int value, int weight) => new Sack() { Value = this.Value + value, Weigth = this.Weigth + weight };
-
+            public int Weight;
         }
 
-        private static int _ComputeValue(IEnumerable<int> values, IEnumerable<int> weights, int weightLimit, Sack sack)
+        private static int _ComputeValue(IEnumerable<Item> items, int weightLimit, List<Item> sack)
         {
-            if( !values.Any())
-                return sack.Value;
+            if (!items.Any())
+                return sack.Sum(i => i.Value);
 
-            var withoutThis = _ComputeValue(values.Skip(1), weights.Skip(1), weightLimit, sack);
+            var withoutThis = _ComputeValue(items.Skip(1), weightLimit, sack);
 
-            var firstWeight = weights.First();
+            var firstItem = items.First();
 
-            if (firstWeight > weightLimit)
+            if (firstItem.Weight > weightLimit)
                 return withoutThis;
 
             return Math.Max(
                 withoutThis,
-                _ComputeValue(values.Skip(1), weights.Skip(1), weightLimit - firstWeight, sack.Add(values.First(), firstWeight)));
+                _ComputeValue(items.Skip(1), weightLimit - firstItem.Weight, sack.Append(firstItem).ToList()));
         }
 
 
         public static int ComputeValue(int[] values, int[] weights, int size, int weightLimit)
         {
-            var sack = new Sack() { Value = 0, Weigth = 0 };
+            var sack = new List<Item>();
+            var items = values.Zip( weights, (v, w) => new Item() { Value = v, Weight = w});
 
-            return _ComputeValue(values, weights, weightLimit, sack);
+            return _ComputeValue(items, weightLimit, sack);
         }
     }
 }
