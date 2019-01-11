@@ -43,30 +43,17 @@ namespace Coding_Problems
             if (memo[row][col] != null)
                 return memo[row][col];
 
-            var s1end = s1[row - 1];
-            var s2end = s2[col - 1];
+            var s1end = s1.Last();
+            var s2end = s2.Last();
 
-            if (s1end == s2end)
-            {
-                memo[row][col] = ComputeCommonSubseqs(row - 1, col - 1, RemoveLastChar(s1), RemoveLastChar(s2))
-                                    .Select(s => s + s1end.ToString())
-                                    .ToList();
-            }
-            else
-            {
-                var lcs1 = ComputeCommonSubseqs(row - 1, col, RemoveLastChar(s1), s2);
-                var lcs2 = ComputeCommonSubseqs(row, col - 1, s1, RemoveLastChar(s2));
-                // var lcs1len = lcs1.Count();
-                // var lcs2len = lcs2.Count();
-                // if (lcs1len == lcs2len)
-                    memo[row][col] = lcs1.Union(lcs2).Distinct().ToList();
-                // else if (lcs1len > lcs2len)
-                //     memo[row][col] = lcs1.ToList();
-                // else
-                //     memo[row][col] = lcs2.ToList();
-            }
+            var cellRes = s1end == s2end ?
+                ComputeCommonSubseqs(row - 1, col - 1, RemoveLastChar(s1), RemoveLastChar(s2))
+                                    .Select(s => s + s1end.ToString()) :
+                ComputeCommonSubseqs(row - 1, col, RemoveLastChar(s1), s2)
+                    .Union(ComputeCommonSubseqs(row, col - 1, s1, RemoveLastChar(s2)))
+                    .Distinct();
 
-            return memo[row][col];
+            return memo[row][col] = cellRes.ToList();
         }
     }
 }
