@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Coding_Problems
 {
@@ -30,6 +31,23 @@ namespace Coding_Problems
             var weights = new int[] { 1, 2, 3,  8,  7,  4 };
             var values = new int[] { 20, 5, 10, 40, 15, 25 };
             Console.WriteLine(Knapsack.ComputeValue(values, weights, 6, 10));
+
+
+            Console.WriteLine("------------------------------");
+            Console.WriteLine();
+
+            var changes = CoinChange.GetChanges( 1, new int[] { 1, 2, 5, 10 }, 4 ).ToList();
+            changes.ForEach( s => Console.WriteLine( string.Join( ", ", s.Select( i => i.ToString()))));
+            Console.WriteLine();
+
+            changes = CoinChange.GetChanges( 2, new int[] { 1, 2, 5, 10 }, 4 ).ToList();
+            changes.ForEach( s => Console.WriteLine( string.Join( ", ", s.Select( i => i.ToString()))));
+            Console.WriteLine();
+
+            changes = CoinChange.GetChanges( 11, new int[] { 1, 2, 5, 10 }, 4 ).ToList();
+            changes.ForEach( s => Console.WriteLine( string.Join( ", ", s.Select( i => i.ToString()))));
+            Console.WriteLine();
+
         }
     }
 }
