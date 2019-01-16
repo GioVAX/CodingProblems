@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace Coding_Problems
@@ -47,6 +49,17 @@ namespace Coding_Problems
             changes = CoinChange.GetChanges( 11, new int[] { 1, 2, 5, 10 }, 4 ).ToList();
             changes.ForEach( s => Console.WriteLine( string.Join( ", ", s.Select( i => i.ToString()))));
             Console.WriteLine();
+
+            Console.WriteLine("------------------------------");
+            Console.WriteLine();
+
+            var points = new List<Point>() {new Point(3,3), new Point( 5,-1), new Point( -2,4)};
+            var closest = FindClosest.Find( points, 2);
+            closest.ForEach( s => Console.WriteLine( s ));
+
+            points = new List<Point>() {new Point(1,3), new Point( 2,-2)};
+            closest = FindClosest.Find( points, 1);
+            closest.ForEach( s => Console.WriteLine( s ));
 
         }
     }
