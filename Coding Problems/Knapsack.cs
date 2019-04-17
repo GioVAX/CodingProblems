@@ -6,13 +6,12 @@ namespace Coding_Problems
 {
     public class Knapsack
     {
-        public static int ComputeValue(int[] values, int[] weights, int size, int weightLimit)
+        public static int ComputeValue(int[] values, int[] weights, int _, int weightLimit)
         {
-            var sack = new List<Item>();
             var items = values.Zip(weights, (v, w) => new Item() { Value = v, Weight = w });
 
             // return _MaxValueRecursively(items, weightLimit, sack);
-            var sackDP = _SackDynProg(items.ToList(), weightLimit);
+            var sackDP = _SackDynProgramming(items.ToList(), weightLimit);
             return sackDP.Sum(i => i.Value);
         }
 
@@ -41,7 +40,7 @@ namespace Coding_Problems
 
         private static int Value(IEnumerable<Item> sack) => sack.Sum(i => i.Value);
 
-        private static IEnumerable<Item> _SackDynProg(List<Item> items, int weightLimit)
+        private static IEnumerable<Item> _SackDynProgramming(List<Item> items, int weightLimit)
         {
             var cells = new IEnumerable<Item>[weightLimit + 1, items.Count() + 1];
 
