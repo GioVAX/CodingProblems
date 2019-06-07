@@ -1,3 +1,4 @@
+[<AutoOpen>]
 module Commons
 
 let primeFactors n = 
