@@ -58,4 +58,4 @@ let toFactorSet n =
 let solution =
     List.map toFactorSet 
     >> List.fold mergeFactors Set.empty
-    >> Set.fold (fun tot (Factor (Base b, Power p)) -> tot * Math.Pow(float b, float p) ) 1.0
+    >> Set.fold (fun tot (Factor (Base b, Power p)) -> tot * (float b ** float p) ) 1.0
