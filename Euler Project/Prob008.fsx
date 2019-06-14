@@ -46,16 +46,14 @@ let private digits = "73167176531330624919225119674426574742355349194934\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
 
-// let arrays = digits |> Seq.windowed 13
-// let arraysOfUInts = arrays |> Seq.map (fun a -> a |> Seq.map (uint64))
 let sub48 n = n - 48UL
-// let arraysOfNormalised = arraysOfUInts |> Seq.map (fun a -> a |> Seq.map sub48)
-// let products = arraysOfNormalised |> Seq.map (fun a -> a |> Seq.fold (*) 1UL )
-// let solution = products |> Seq.max
-
 let uint64Conversion = Seq.map (uint64 >> sub48)
 
-let pipeline = Seq.windowed 13 
-                >> Seq.map (uint64Conversion >> Seq.fold (*) 1UL)
+let doesNotContainZeroes = Array.contains '0' >> not
+let computeProduct = uint64Conversion >> Seq.reduce (*)
 
-let solution = digits |> pipeline |> Seq.max           
+let pipeline = Seq.windowed 13 
+                >> Seq.filter doesNotContainZeroes
+                >> Seq.map computeProduct
+
+let solution = digits |> pipeline |> Seq.max
