@@ -43,7 +43,7 @@ let gcdl = function
         | list -> List.reduce gcdEuclid list
 
 let msort =
-    let split (l: 'a list) = List.splitAt (l.Length / 2) l
+    let split l = l |> List.splitAt (l.Length / 2)
     let rec merge (list1, list2) = 
         match(list1,list2) with
         | (list1, []) -> list1
@@ -58,3 +58,9 @@ let msort =
             merge (loop l1, loop l2)
     loop
 
+let splitWhen pred =
+    let rec loop acc = function
+        | [] -> None
+        | x::xs when pred x -> Some (List.rev acc, x::xs)
+        | x::xs -> loop (x::acc) xs
+    loop []
