@@ -10,3 +10,16 @@ let primeFactors n =
         else
             getFactors  (prime+1L) acc num
     getFactors 2L [] n
+
+let primes =
+    let rec loop prevs newVal=
+        if prevs |> List.forall (fun p -> newVal % p <> 0) then
+            seq { 
+                yield newVal;
+                yield! loop (newVal::prevs) (newVal+1)
+            }
+        else        
+            seq {
+                yield! loop prevs (newVal+1)
+            }
+    loop [] 2
