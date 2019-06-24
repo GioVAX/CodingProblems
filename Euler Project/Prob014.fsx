@@ -15,18 +15,39 @@ module Prob014
 //
 // NOTE: Once the chain starts the terms are allowed to go above one million.
 
-let rec collatz n = 
+let mutable collatzMemoize = Map.empty<int, int list>
+
+let rec collatz n =
+    let ret = match n |> collatzMemoize.TryFind with
+                | Some list -> n::list
+                | None -> match n with
+                            | 1 -> [1]
+                            | e when e % 2 = 0 -> n::(collatz (e/2))
+                            | o -> n::(collatz (o*3+1))
+    collatzMemoize <- collatzMemoize.Add (n, ret) 
+    ret
+
+let rec collatz' n = 
     seq { 
         yield n
         match n with 
         | 1 -> yield! []
         | e when e % 2 = 0 -> 
-            yield! collatz (e / 2)
+            yield! collatz' (e / 2)
         | o -> 
-            yield! collatz (o * 3 + 1)
+            yield! collatz' (o * 3 + 1)
     }
 
+let resetCollatz = collatzMemoize <- Map.empty<int, int list>
+
 let solution maxNum =
+    resetCollatz
     [1..maxNum]
-    |> Seq.map (fun n -> (n, n |> collatz |> Seq.length))
-    |> Seq.maxBy snd
+        |> Seq.map (fun n -> (n, n |> collatz |> Seq.length))
+        |> Seq.maxBy snd
+
+let solution' maxNum =
+    [1..maxNum]
+        |> Seq.map (fun n -> (n, n |> collatz' |> Seq.length))
+        |> Seq.maxBy snd
+            
