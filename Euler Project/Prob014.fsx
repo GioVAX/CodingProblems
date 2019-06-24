@@ -18,14 +18,15 @@ module Prob014
 let mutable collatzMemoize = Map.empty<int, int list>
 
 let rec collatz n =
-    let ret = match n |> collatzMemoize.TryFind with
-                | Some list -> n::list
-                | None -> match n with
-                            | 1 -> [1]
-                            | e when e % 2 = 0 -> n::(collatz (e/2))
-                            | o -> n::(collatz (o*3+1))
-    collatzMemoize <- collatzMemoize.Add (n, ret) 
-    ret
+    match n |> collatzMemoize.TryFind with
+        | Some list -> list
+        | None -> 
+            let ret = match n with
+                        | 1 -> [1]
+                        | e when e % 2 = 0 -> n::(collatz (e/2))
+                        | o -> n::(collatz (o*3+1))
+            collatzMemoize <- collatzMemoize.Add (n, ret)
+            ret
 
 let rec collatz' n = 
     seq { 
@@ -38,13 +39,13 @@ let rec collatz' n =
             yield! collatz' (o * 3 + 1)
     }
 
-let resetCollatz = collatzMemoize <- Map.empty<int, int list>
+let resetCollatz() = collatzMemoize <- Map.empty<int, int list>
 
 let solution maxNum =
-    resetCollatz
+    resetCollatz()
     [1..maxNum]
         |> Seq.map (fun n -> (n, n |> collatz |> Seq.length))
-        |> Seq.maxBy snd
+        // |> Seq.maxBy snd
 
 let solution' maxNum =
     [1..maxNum]
