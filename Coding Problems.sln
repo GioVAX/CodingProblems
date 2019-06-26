@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding Problems Tests", "Coding Problems Tests\Coding Problems Tests.csproj", "{F55C533D-B6B8-4227-89A4-8D84483DC0EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coding Problems Tests", "Coding Problems Tests\Coding Problems Tests.csproj", "{F55C533D-B6B8-4227-89A4-8D84483DC0EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coding Problems", "Coding Problems\Coding Problems.csproj", "{2765324B-4FD3-440A-9BAB-D79625862A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coding Problems", "Coding Problems\Coding Problems.csproj", "{2765324B-4FD3-440A-9BAB-D79625862A1E}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp Coding Problems", "FSharp Coding Problems\FSharp Coding Problems.fsproj", "{536AB6AA-3161-4A6B-BB65-A3C616706949}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp Coding Problems Tests", "FSharp Coding Problems Tests\FSharp Coding Problems Tests.fsproj", "{530ED494-D75B-4C1B-A842-941D2D049CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F55C533D-B6B8-4227-89A4-8D84483DC0EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +45,35 @@ Global
 		{2765324B-4FD3-440A-9BAB-D79625862A1E}.Release|x64.Build.0 = Release|Any CPU
 		{2765324B-4FD3-440A-9BAB-D79625862A1E}.Release|x86.ActiveCfg = Release|Any CPU
 		{2765324B-4FD3-440A-9BAB-D79625862A1E}.Release|x86.Build.0 = Release|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Debug|x64.Build.0 = Debug|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Debug|x86.Build.0 = Debug|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Release|x64.ActiveCfg = Release|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Release|x64.Build.0 = Release|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Release|x86.ActiveCfg = Release|Any CPU
+		{536AB6AA-3161-4A6B-BB65-A3C616706949}.Release|x86.Build.0 = Release|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Release|x64.Build.0 = Release|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{530ED494-D75B-4C1B-A842-941D2D049CDC}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4A669C0-35D4-4BDC-A926-EF14C9D74492}
 	EndGlobalSection
 EndGlobal
