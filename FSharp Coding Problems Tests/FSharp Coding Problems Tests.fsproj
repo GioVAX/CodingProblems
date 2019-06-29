@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Tests.fs" />
+    <Compile Include="TestDataGenerator.fs" />
+    <Compile Include="MixedProblemsTests.fs" />
+    <Compile Include="EightQueensTests.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +23,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FSharp Coding Problems\FSharp Coding Problems.fsproj" />
   </ItemGroup>
 
   <ItemGroup>

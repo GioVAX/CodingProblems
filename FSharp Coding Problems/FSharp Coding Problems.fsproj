@@ -5,9 +5,8 @@
     <RootNamespace>FSharp_Coding_Problems</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup />
-
   <ItemGroup>
+    <Compile Include="EightQueens.fs" />
     <Compile Include="MixedProblems.fs" />
   </ItemGroup>
 
