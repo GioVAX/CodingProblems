@@ -6,6 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Project Euler\Commons.fs" />
+    <Compile Include="Project Euler\Prob001.fs" />
+    <Compile Include="Project Euler\Prob002.fs" />
+    <Compile Include="Project Euler\Prob003.fs" />
+    <Compile Include="Project Euler\Prob004.fs" />
+    <Compile Include="Project Euler\Prob005.fs" />
+    <Compile Include="Project Euler\Prob006.fs" />
+    <Compile Include="Project Euler\Prob007.fs" />
+    <Compile Include="Project Euler\Prob008.fs" />
+    <Compile Include="Project Euler\Prob009.fs" />
+    <Compile Include="Project Euler\Prob010.fs" />
+    <Compile Include="Project Euler\Prob011.fs" />
+    <Compile Include="Project Euler\Prob012.fs" />
+    <Compile Include="Project Euler\Prob013.fs" />
+    <Compile Include="Project Euler\Prob014.fs" />
     <Compile Include="LeetCode\AddStrings.fs" />
     <Compile Include="EightQueens.fs" />
     <Compile Include="MixedProblems.fs" />

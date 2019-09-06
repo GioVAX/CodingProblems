@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coding Problems Tests", "Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Coding Problems", "Coding Problems\Coding Problems.csproj", "{2765324B-4FD3-440A-9BAB-D79625862A1E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp Coding Problems", "FSharp Coding Problems\FSharp Coding Problems.fsproj", "{536AB6AA-3161-4A6B-BB65-A3C616706949}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSharp Coding Problems", "FSharp Coding Problems\FSharp Coding Problems.fsproj", "{536AB6AA-3161-4A6B-BB65-A3C616706949}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp Coding Problems Tests", "FSharp Coding Problems Tests\FSharp Coding Problems Tests.fsproj", "{530ED494-D75B-4C1B-A842-941D2D049CDC}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSharp Coding Problems Tests", "FSharp Coding Problems Tests\FSharp Coding Problems Tests.fsproj", "{530ED494-D75B-4C1B-A842-941D2D049CDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
