@@ -11,6 +11,8 @@
     <Compile Include="TestDataGenerator.fs" />
     <Compile Include="MixedProblemsTests.fs" />
     <Compile Include="EightQueensTests.fs" />
+    <Compile Include="MemoizeTests.fs" />
+    <Compile Include="MemoizeTailRecursiveTests.fs" />
   </ItemGroup>
 
   <ItemGroup>
