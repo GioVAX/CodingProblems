@@ -1,10 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FSharp_Coding_Problems</RootNamespace>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Project Euler\Commons.fs" />
     <Compile Include="Project Euler\Prob001.fs" />
@@ -22,14 +20,13 @@
     <Compile Include="Project Euler\Prob013.fs" />
     <Compile Include="Project Euler\Prob014.fs" />
     <Compile Include="Project Euler\Prob015.fs" />
+    <Compile Include="Project Euler\Prob016.fs" />
     <Compile Include="LeetCode\AddStrings.fs" />
     <Compile Include="EightQueens.fs" />
     <Compile Include="MixedProblems.fs" />
     <Compile Include="Memoize.fs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="5.0.0" />
   </ItemGroup>
-
 </Project>
