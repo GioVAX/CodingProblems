@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Include="Project Euler\Prob015Tests.fs" />
+    <Compile Include="Project Euler\Prob017Tests.fs" />
     <Compile Include="TestDataGenerator.fs" />
     <Compile Include="MixedProblemsTests.fs" />
     <Compile Include="EightQueensTests.fs" />
