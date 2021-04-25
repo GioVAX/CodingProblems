@@ -1,22 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>FSharp_Coding_Problems_Tests</RootNamespace>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Project Euler\Prob015Tests.fs" />
     <Compile Include="Project Euler\Prob017Tests.fs" />
     <Compile Include="TestDataGenerator.fs" />
     <Compile Include="MixedProblemsTests.fs" />
     <Compile Include="EightQueensTests.fs" />
+    <Compile Include="CoinChangeTests.fs" />
     <Compile Include="MemoizeTests.fs" />
     <Compile Include="MemoizeTailRecursiveTests.fs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="FsCheck" Version="2.14.3" />
     <PackageReference Include="FsCheck.Xunit" Version="2.14.3" />
@@ -28,13 +25,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\FSharp Coding Problems\FSharp Coding Problems.fsproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="5.0.0" />
   </ItemGroup>
-
 </Project>

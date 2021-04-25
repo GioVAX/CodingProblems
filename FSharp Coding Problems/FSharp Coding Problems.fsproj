@@ -23,6 +23,7 @@
     <Compile Include="Project Euler\Prob016.fs" />
     <Compile Include="Project Euler\Prob017.fs" />
     <Compile Include="LeetCode\AddStrings.fs" />
+    <Compile Include="CoinChange.fs" />
     <Compile Include="EightQueens.fs" />
     <Compile Include="MixedProblems.fs" />
     <Compile Include="Memoize.fs" />
