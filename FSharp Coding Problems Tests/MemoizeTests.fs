@@ -22,7 +22,7 @@ let ``memoize should return the same result as the underlying function`` (num) =
     let mem = memoize factorial
     mem num = factorial num
 
-[<Property>]
+[<Property(Skip="Incomplete test")>]
 let ``memoize for slow computation should run faster on second call`` (num:PositiveInt) =
     let mem = memoize slowFactorial
     let dur1 = duration (fun () -> mem num )
