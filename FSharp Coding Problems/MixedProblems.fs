@@ -2,12 +2,10 @@
 
 module MixedProblemsLists
 
-let pair = 
-    let rec loop = function
-        | []  
-        | [_] -> []
-        | fst::snd::tail -> (fst, snd)::loop tail
-    loop
+let rec pair = function
+    | []  
+    | [_] -> []
+    | fst::snd::tail -> (fst, snd)::pair tail
 
 // let pair' l = 
 //     let rec loop acc = function
@@ -15,17 +13,13 @@ let pair =
 //         | first::second::tail -> loop ((first, second) :: acc) tail
 //     loop [] l   
 
-let unpair =
-    let rec loop = function
-        | [] -> []
-        | (fst,snd)::tail -> fst::snd::loop tail
-    loop    
+let rec unpair = function
+    | [] -> []
+    | (fst,snd)::tail -> fst::snd::unpair tail
 
-let expand =
-    let rec loop = function
-        | [] -> []
-        | (_::tail) as list -> list::loop tail
-    loop
+let rec expand = function
+    | [] -> []
+    | (_::tail) as list -> list::expand tail
 
 let gcdEuclid n1 n2 =
     let rec loop big small = 
