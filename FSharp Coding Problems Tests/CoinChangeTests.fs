@@ -15,4 +15,4 @@ type OneCoin =
 [<Property(Arbitrary=[| typeof<OneCoin> |])>]
 let ``change for one of the available sizes SHOULD return one elem of the size`` (coin:int) =
     change coin
-    |> should equal coin
+    |> should equal [coin]
