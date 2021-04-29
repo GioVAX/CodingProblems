@@ -20,4 +20,32 @@ let ``change for one of the available sizes SHOULD return one elem of the size``
 [<Fact>]
 let ``change for 3 SHOULD return 1 and 2`` ()=
     change 3
-    |> should matchList [1;2]
+    |> should matchList [[2;1] ; [1;1;1]]
+
+[<Fact>]
+let ``change for 5`` ()=
+    change 5
+    |> should matchList [[5]; [2;2;1]; [2;1;1;1]; [1;1;1;1;1]]
+
+[<Property>]
+let ``index less than coin is unchanged`` (pre: int list list) =
+    let result =
+        folder [|pre|] 1
+
+    result.[0] |> should matchList pre
+
+[<Property(Arbitrary=[| typeof<OneCoin> |])>]
+let ``on empty list return the coin`` (coin:int) =
+    let state = Array.create (coin+1) [[]]
+    let result = folder state coin
+
+    let expected = Array.create (coin+1) [[]]
+    expected.[coin] <- [[coin]]
+    result |> should equal expected
+
+[<Fact>]
+let ``change of 2 with only 1s`` () =
+    let state = Array.create 3 [[]]
+    let result = folder' state 1
+
+    result |> should equal [| [[]]; [[1]]; [[1;1]] |]
