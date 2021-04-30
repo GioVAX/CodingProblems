@@ -32,7 +32,7 @@ let standardCoinSizes = [1; 2; 5; 10; 50]
 let append coin =
     List.map (fun l -> coin::l)
 
-let folder' (previousIteration: int list list []) (coin:int) : int list list [] =
+let generateAllChanges previousIteration coin =
     previousIteration
     |> Array.indexed
     |> Array.fold
@@ -53,24 +53,31 @@ let folder' (previousIteration: int list list []) (coin:int) : int list list [] 
         )
         [||]
 
-let folder (state: int list list []) (coin:int) : int list list [] =
-    state
-    |> Array.mapi
-        (fun i changes -> 
-            match (i, changes) with
-            | (x, _) when x < coin -> changes
-            | (_,[[]]) -> append coin state.[i-coin]
-            | _ -> 
-                let olds = append coin state.[i-coin]
-                changes
-                |> List.append olds
-        )
+//let folder (state: int list list []) (coin:int) : int list list [] =
+//    state
+//    |> Array.mapi
+//        (fun i changes -> 
+//            match (i, changes) with
+//            | (x, _) when x < coin -> changes
+//            | (_,[[]]) -> append coin state.[i-coin]
+//            | _ -> 
+//                let olds = append coin state.[i-coin]
+//                changes
+//                |> List.append olds
+//        )
 
-let customChange (sizes:int list) (amount:int) : int list list =
-    let state = Array.create (amount+1) [[]]
-    let state' = 
-        sizes
-        |> List.fold folder' state
-    state'.[amount]
+let leastCoins l =
+    l
+    |> List.sortBy List.length
+    |> List.head
 
-let change amount = customChange standardCoinSizes amount
+let customChange availableSizes amount =
+    let initial = Array.create (amount+1) [[]]
+    let changes = 
+        availableSizes
+        |> List.fold generateAllChanges initial
+    changes.[amount]
+
+let change amount = 
+    customChange standardCoinSizes amount
+    |> leastCoins
