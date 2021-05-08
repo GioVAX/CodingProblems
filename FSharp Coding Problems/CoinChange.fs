@@ -8,19 +8,19 @@ let append coin =
 let generateAllChanges previousIteration newCoin =
     previousIteration
     |> Map.fold
-        (fun currentIteration amnt oldChanges ->
-            match (amnt, oldChanges) with
-            | (amount, changes) when amount < newCoin -> 
-                currentIteration 
-                |> Map.add amount changes
-            | (amount, [[]]) -> 
-                currentIteration
-                |> Map.add amount (append newCoin currentIteration.[amount - newCoin])
-            | (amount, changes) ->
-                let withCoin = (append newCoin currentIteration.[amount - newCoin])
-                let allChanges = changes |> List.append withCoin
-                currentIteration
-                |> Map.add amount allChanges
+        (fun (currentIteration: Map<int, int list list>) amnt oldChanges ->
+            let newChanges = 
+                match (amnt, oldChanges) with
+                | (amount, _) when amount < newCoin -> 
+                    oldChanges
+                | (_, [[]]) -> 
+                    append newCoin currentIteration.[amnt - newCoin]
+                | _ ->
+                    let withNewCoin = append newCoin currentIteration.[amnt - newCoin]
+                    List.append withNewCoin oldChanges
+
+            currentIteration 
+                |> Map.add amnt newChanges
         )
         Map.empty
 
