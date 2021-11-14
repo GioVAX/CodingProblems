@@ -1,13 +1,14 @@
 ﻿module Memoize
 
+open System.Collections.Generic
+
 let memoize f =
-    let mutable cache = Map.empty
+    let cache = Dictionary<_, _>()
     (fun param -> 
-        match cache.TryFind param with
-        | Some value -> value
-        | None -> 
+        match cache.TryGetValue param with
+        | true, value -> value
+        | false, _ -> 
             let value = f param
-            let cache = cache.Add (param, value)
+            cache.Add (param, value)
             value
     )
-
