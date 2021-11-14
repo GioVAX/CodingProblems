@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
     <RootNamespace>FSharp_Coding_Problems_Tests</RootNamespace>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -29,6 +29,6 @@
     <ProjectReference Include="..\FSharp Coding Problems\FSharp Coding Problems.fsproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="5.0.0" />
+    <PackageReference Update="FSharp.Core" Version="6.0.1" />
   </ItemGroup>
 </Project>
